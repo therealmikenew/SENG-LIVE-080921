@@ -30,7 +30,7 @@ Introduce students to the lecture style. Here we can discuss classroom etiquette
 
 ### Warm Up - (5 minutes)
 
-- What are the different data types we can work with in JS?
+What are the different data types we can work with in JS?
 
 ```
 8 basic data types in JS:
@@ -123,6 +123,17 @@ Of the data types we went over, which is not considered a primitive data type an
 Object because it can store collections of data
 ```
 
+#### Operating on Data Types & gotchas
+
+What to use to assign values: `x = y (assignment)`
+what is happening in this statement: `x += y addition assignment`
+Performing addition on data types: `1 + 1 returns 2`
+why is this happening? `"1" + 1 returns 11` 
+`3 == '3' returns true` Discuss that JS engine coerces values to string for comparison
+`3 === '3' returns false` Strict equals, should always use this for comparisons
+`x = 3: ++x returns 4` 
+`x++ returns 3`
+`console.log("" == "0")` returns false, why?
 
 
 
