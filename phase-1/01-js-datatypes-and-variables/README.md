@@ -13,9 +13,9 @@
 05 min - The Console
 05 min - Debugging
 20 min - Segment 1: Review Data Types
+10 min - Break
 
 20 min - Functions as variables
-10 min - Break
 10 min - Check for Understanding
 10 min - Scope, var, let and const
 10 min - The Callstack
@@ -109,14 +109,19 @@ console.log(typeof true) => boolean
 console.log(typeof Symbol("name")) => symbol
 ```
 
-// What is a primitive data type? 
-// a datatype that can only store a single piece of data
+#### Primitive vs non-primitive data types
 
-// Of the data types we went over, which one is not considered a primitive data type
-// Object - non-primitive
+What is a primitive data type?
 
-// Why is an object not a primitive? 
-// Can store collections of data
+```
+A datatype that can only store a single piece of data
+```
+
+Of the data types we went over, which is not considered a primitive data type and why?
+
+```
+Object because it can store collections of data
+```
 
 
 
