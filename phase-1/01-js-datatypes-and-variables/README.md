@@ -1,10 +1,11 @@
 # Data Types and Variables
 
-### SWBAT: 
+### SWBAT:
+
 - Review JS Data Types
-- Explain the effect let and const has on scope and variable declarations and assigning 
-- Demonstrate understanding of scope in JavaScript 
-- Review JS Conditionals 
+- Explain the effect let and const has on scope and variable declarations and assigning
+- Demonstrate understanding of scope in JavaScript
+- Review JS Conditionals
 
 ```txt
 05 min - Introduction
@@ -34,8 +35,8 @@ What are the different data types we can work with in JS?
 
 ```
 8 basic data types in JS:
-String 
-Number 
+String
+Number
 Boolean
 BigInt - A BigInt number is created by appending n to the end of an integer
 Object
@@ -64,12 +65,13 @@ Debugging is most of development, our lectures should have a number of built in 
 Console:
 Go over console in dev tools and discuss gotcha's in console's i.e variable redeclarations allowed. Best practice to code in JS file and run files in console.
 
-### Segment 1: Data Types 
+### Segment 1: Data Types
+
 Go over examples of the different JS data types
 
 #### Strings
 
-Go over the different ways of writing a string. 
+Go over the different ways of writing a string.
 
 ```
 "Using double quotation marks"
@@ -78,14 +80,17 @@ Go over the different ways of writing a string.
 ```
 
 #### Numbers
+
 Review some examples of numbers
+
 ```
-integers 
+integers
 floats
-NaN 
+NaN
 ```
 
 #### Booleans
+
 Make sure that students know truthy and falsy values are booleans.
 
 Identify things in JS that will return false
@@ -103,7 +108,7 @@ Point out that everything else is true
 
 #### Using typeof
 
-``` 
+```
 console.log(typeof undefined) => undefined
 console.log(typeof true) => boolean
 console.log(typeof Symbol("name")) => symbol
@@ -129,42 +134,74 @@ Object because it can store collections of data
 What to use to assign values: `x = y (assignment)`
 what is happening in this statement: `x += y addition assignment`
 Performing addition on data types: `1 + 1 returns 2`
-why is this happening? `"1" + 1 returns 11` 
+why is this happening? `"1" + 1 returns 11`
 `3 == '3' returns true` Discuss that JS engine coerces values to string for comparison
 `3 === '3' returns false` Strict equals, should always use this for comparisons
-`x = 3: ++x returns 4` 
+`x = 3: ++x returns 4`
 `x++ returns 3`
 `console.log("" == "0")` returns false, why?
 are undefined and null the same?
 ```
 
-
 ### Segment 2: Variables and Conditionals
 
 #### Variables
+
 Ask students what variables are and why they think they are useful
+
 ```
 Variables are named storage for data
 Allow us to store data and reference the data later
 ```
+
 `Let vs Const`
+
 Ask students to identify key differences between let and const:
+
 ```
 can declare `let` without initialization
 `let` can be reassigned
+```
+
+Ask students to give good use cases for let vs const
 
 ```
-What is a good use case of let vs const?
+A great example here is a counter since the value of a counter is expected to change.
+```
 
-//---- Variable naming ----//
-// what is wrong with the following variable
-// let 1jedi = 'Yoda' // variables shouldn't start with numbers
+Ask students to think about best variable naming practices
 
-// fix these
-// let lukeskywalker = 'Luke Skywalker'
-// let function = 'Darth Vader' // SyntaxError: Unexpected token 'break' / reserved key
-// const counter = 0
-// console.log(++counter)
+```
+variables shouldn't start with numbers
+using camelcasing
+```
+
+Ask students to identify reasons why the following variables are not best practice
+
+```
+let lukeskywalker = 'Luke Skywalker'
+let function = 'Hello World' // Uncaught SyntaxError: Unexpected token 'function' / reserved key
+```
+
+`Reading Errors`
+
+```
+console.log(student)
+ReferenceError: student is not defined
+
+let test name = "aysan"
+SyntaxError: Unexpected identifier
+
+let name = "aysan"
+let name = "bob"
+SyntaxError: Identifier 'name' has already been declared
+
+const cat = 'rose'
+cat = 'timmy'
+TypeError: Assignment to constant variable.
+```
+
+
 
 //----Variable Scopes ----//
 // global scope
@@ -183,25 +220,12 @@ What is a good use case of let vs const?
 // }
 // console.log(character) // returns 'Han Solo'
 
-//---- READING ERRORS ----//
-// console.log(student)
-// ReferenceError: student is not defined
 
-// let test name = "aysan"
-// SyntaxError: Unexpected identifier
-
-// let name = "aysan"
-// let name = "bob"
-// SyntaxError: Identifier 'name' has already been declared
-
-// const cat = 'rose'
-// cat = 'timmy'
-// TypeError: Assignment to constant variable.
 
 
 //---- CONDITIONALS ----//
 
-// Write a conditional 
+// Write a conditional
 
 // if (true) {
 //     // return something
@@ -217,7 +241,7 @@ What is a good use case of let vs const?
     // return something
 // }
 
-// ternary operator 
+// ternary operator
 
 // (condition) ? true : false
 
@@ -225,3 +249,4 @@ What is a good use case of let vs const?
 
 
 
+```
