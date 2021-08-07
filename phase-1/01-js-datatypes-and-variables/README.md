@@ -2,20 +2,20 @@
 
 ### SWBAT: 
 - Review JS Data Types
-- Review JS Conditionals 
-- Demonstrate understanding of scope in JavaScript 
 - Explain the effect let and const has on scope and variable declarations and assigning 
+- Demonstrate understanding of scope in JavaScript 
+- Review JS Conditionals 
 
 ```txt
 05 min - Introduction
-05 min - Warm Up
 05 min - The Set up
 05 min - The Console
 05 min - Debugging
+05 min - Warm Up
 20 min - Segment 1: Review Data Types
 10 min - Break
+20 min - Segment 2: Variables and Conditionals
 
-20 min - Functions as variables
 10 min - Check for Understanding
 10 min - Scope, var, let and const
 10 min - The Callstack
@@ -135,16 +135,93 @@ why is this happening? `"1" + 1 returns 11`
 `x = 3: ++x returns 4` 
 `x++ returns 3`
 `console.log("" == "0")` returns false, why?
+are undefined and null the same?
 ```
 
 
+### Segment 2: Variables and Conditionals
+
+#### Variables
+Ask students what variables are and why they think they are useful
+```
+Variables are named storage for data
+Allow us to store data and reference the data later
+```
+`Let vs Const`
+Ask students to identify key differences between let and const:
+```
+can declare `let` without initialization
+`let` can be reassigned
+
+```
+What is a good use case of let vs const?
+
+//---- Variable naming ----//
+// what is wrong with the following variable
+// let 1jedi = 'Yoda' // variables shouldn't start with numbers
+
+// fix these
+// let lukeskywalker = 'Luke Skywalker'
+// let function = 'Darth Vader' // SyntaxError: Unexpected token 'break' / reserved key
+// const counter = 0
+// console.log(++counter)
+
+//----Variable Scopes ----//
+// global scope
+// let character = "Chewbacca";
+
+// block scope
+// console.log(character)
+// if (true) {
+//     let character = "Han Solo"
+// }
+// ReferenceError: character is not defined
+
+// what to expect here?
+// if (true) {
+//     character = "Han Solo"
+// }
+// console.log(character) // returns 'Han Solo'
+
+//---- READING ERRORS ----//
+// console.log(student)
+// ReferenceError: student is not defined
+
+// let test name = "aysan"
+// SyntaxError: Unexpected identifier
+
+// let name = "aysan"
+// let name = "bob"
+// SyntaxError: Identifier 'name' has already been declared
+
+// const cat = 'rose'
+// cat = 'timmy'
+// TypeError: Assignment to constant variable.
+
+
+//---- CONDITIONALS ----//
+
+// Write a conditional 
+
+// if (true) {
+//     // return something
+// } else {
+//     // return something
+// }
+
+// if (condition) {
+//     // return something
+// } else if (condition){
+//     // return something
+// } else {
+    // return something
+// }
+
+// ternary operator 
+
+// (condition) ? true : false
 
 
 
 
-
-
-
-Var vs. let, const
-Could stick with var for a little longer and switch to let, const once we introduce function scope to show change in behavior
 
