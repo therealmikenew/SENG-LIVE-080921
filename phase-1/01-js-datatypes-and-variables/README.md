@@ -125,6 +125,7 @@ Object because it can store collections of data
 
 #### Operating on Data Types & gotchas
 
+```txt
 What to use to assign values: `x = y (assignment)`
 what is happening in this statement: `x += y addition assignment`
 Performing addition on data types: `1 + 1 returns 2`
@@ -134,7 +135,7 @@ why is this happening? `"1" + 1 returns 11`
 `x = 3: ++x returns 4` 
 `x++ returns 3`
 `console.log("" == "0")` returns false, why?
-
+```
 
 
 
