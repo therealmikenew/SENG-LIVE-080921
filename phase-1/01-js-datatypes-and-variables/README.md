@@ -16,10 +16,9 @@
 20 min - Segment 1: Review Data Types
 10 min - Break
 20 min - Segment 2: Variables and Conditionals
-
 10 min - Check for Understanding
-10 min - Scope, var, let and const
-10 min - The Callstack
+10 min - Go over global and block scope
+10 min - Questions
 05 min - Exit Ticket
 ---
 120 min
