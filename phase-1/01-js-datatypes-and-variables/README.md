@@ -291,11 +291,3 @@ if (true) {
 }
 console.log(pokemon)
 ```
-
-
-
-
-
-
-
-
