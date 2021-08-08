@@ -154,7 +154,7 @@ Variables are named storage for data
 Allow us to store data and reference the data later
 ```
 
-`Let vs Const`
+Let vs Const
 
 Ask students to identify key differences between let and const:
 
@@ -166,87 +166,136 @@ can declare `let` without initialization
 Ask students to give good use cases for let vs const
 
 ```
-A great example here is a counter since the value of a counter is expected to change.
+A great example here is a likes counter since the value of a counter is expected to change.
+
+let likes = 0
+likes = likes += 1
+console.log(likes)
+
+vs
+
+const likes = 0
+likes = likes += 1
+console.log(likes)
 ```
 
 Ask students to think about best variable naming practices
 
 ```
-variables shouldn't start with numbers
-using camelcasing
+Variables shouldn't start with numbers
+Using camelcasing
+Variables should start with a letter
+Variables should not contain spaces
+Can not use reserved words
 ```
 
 Ask students to identify reasons why the following variables are not best practice
 
 ```
-let lukeskywalker = 'Luke Skywalker'
-let function = 'Hello World' // Uncaught SyntaxError: Unexpected token 'function' / reserved key
+let pokemonname = 'Meowth'
+let function = 'Render Pokemon' 
+=> Uncaught SyntaxError: Unexpected token 'function' / reserved key
 ```
 
-`Reading Errors`
+Reading Errors
 
 ```
-console.log(student)
-ReferenceError: student is not defined
+console.log(pokemon)
+ReferenceError: pokemon is not defined
 
-let test name = "aysan"
+let test pokemon = "Jigglypuff"
 SyntaxError: Unexpected identifier
 
-let name = "aysan"
-let name = "bob"
-SyntaxError: Identifier 'name' has already been declared
+let img = "www.pokeimg.com"
+let img = "www.pokedeximg.com"
+SyntaxError: Identifier 'img' has already been declared
 
-const cat = 'rose'
-cat = 'timmy'
+const likes = 0
+likes = 1
 TypeError: Assignment to constant variable.
 ```
 
+#### Conditionals
 
+Practice writing a conditional with help of students.
 
-//----Variable Scopes ----//
-// global scope
-// let character = "Chewbacca";
+Create two variables, `pokemon` and `likes`
+Set pokemon equal to a character
+Set likes equal to one
 
-// block scope
-// console.log(character)
-// if (true) {
-//     let character = "Han Solo"
-// }
-// ReferenceError: character is not defined
-
-// what to expect here?
-// if (true) {
-//     character = "Han Solo"
-// }
-// console.log(character) // returns 'Han Solo'
-
-
-
-
-//---- CONDITIONALS ----//
-
-// Write a conditional
-
-// if (true) {
-//     // return something
-// } else {
-//     // return something
-// }
-
-// if (condition) {
-//     // return something
-// } else if (condition){
-//     // return something
-// } else {
-    // return something
-// }
-
-// ternary operator
-
-// (condition) ? true : false
-
-
-
-
+If there is only 1 like, console.log 'Character has 1 like'
+Else dynamically return number of likes and console.log 'Character has <num> likes`
 
 ```
+let pokemon = "Voltorb"
+let likes = 1 
+
+if (likes === 1) {
+    console.log(`${pokemon} has 1 like`)
+} else {
+    console.log(`${pokemon} has ${likes} likes`)
+}
+
+Ask students what they assume will happen if the number of likes is 0 
+
+```
+Rewrite the same conditional only this time add a third condition that checks if the num of likes is 0 then console.log 'Character has no likes'
+
+```
+let pokemon = "Voltorb"
+let likes = 3 
+
+if (likes === 1) {
+    console.log(`${pokemon} has 1 like`)
+} else if (likes > 1) {
+    console.log(`${pokemon} has ${likes} likes`)
+} else {
+    console.log(`${pokemon} has no likes`)
+}
+```
+
+Write a conditional statement that performs an additional assignment to 1 if the num of likes is 0 and increments the num of likes if it is not.
+
+```
+likes === 0 ? likes += 1 : ++likes
+
+console.log(likes)
+```
+
+#### Scopes
+
+Global Scope
+
+Touch on how data in the global scope is accessible through the program. Global scope belongs to the window
+
+`let character = "Chewbacca";`
+
+Block Scope
+
+In the following example, allow students to identify why the following error is being returned
+Move console.log to end of code and point out that it still returns an error. 
+
+```
+console.log(pokemon)
+if (true) {
+    let pokemon = "Charmeleon"
+}
+ReferenceError: pokemon is not defined
+```
+
+Ask students what to expect with the following code and why it is still returning the value of the variable
+
+```
+if (true) {
+    pokemon = "Metapod"
+}
+console.log(pokemon)
+```
+
+
+
+
+
+
+
+
