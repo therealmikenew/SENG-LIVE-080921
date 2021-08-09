@@ -67,12 +67,26 @@ Discuss anonymous functions and the restrictions of scope in these two examples
 Go over arrow functions
 
 ```
-const printPokemonName = () => {
+const renderPokemon = () => {
 console.log('Hi, I\'m Pikachu!')
 }
 ```
 
-Anatomy of a function (parameters, body)
-Invoking a function
+#### Anatomy of a function (parameters, body)
+
+Go over function anatomy, point out parameters
+and the body
+
+Go over difference between a paramter and argument
+
+#### Reference vs invokation
+What is the difference between defining and invoking a function?
+
+```
+printPokemonName
+printPokemonName()
+```
+
+
 Function scope vs global scope
 What is a closure and why is it useful
