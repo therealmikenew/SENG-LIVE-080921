@@ -2,14 +2,17 @@
 
 ### SWBAT:
 
-- Review JS Data Types
-- Explain the effect let and const has on scope and variable declarations and assigning
-- Demonstrate understanding of scope in JavaScript
-- Review JS Conditionals
+- Explain why functions are important in JS
+- Understand the difference between declaring and invoking a function
+- Understand what a first-class function is and why that matters in JS
+- Create and use callback functions
+- Understand function scope vs global scope
 
 ```txt
-05 min - Introduction
-05 min - The Set up
+05 min - Warm Up
+05 min - Review Warm up
+30 min - Segment 1: functions & scope
+
 05 min - The Console
 05 min - Debugging
 05 min - Warm Up
@@ -23,3 +26,53 @@
 ---
 120 min
 ```
+
+### Warm up - (5 min)
+
+Warm up question:
+
+What are functions and why do we use them?
+
+```
+Allow the creation of reusable code
+Separation of responsibilities
+Building blocks of JS programming
+Allows us to structure larger programs
+```
+
+### Segment 1: functions & scope
+
+#### Declaring a function
+
+Using function keyword/function declaration - point out that this creates a global scope
+
+```
+console.log(renderPokemon())
+function renderPokemon(){
+    console.log('Hi, I\'m Pikachu!')
+}
+```
+
+Have students help you convert the previous function into a function expression
+
+```
+console.log(renderPokemon())
+const renderPokemon = function(){
+console.log('Hi, I\'m Pikachu!')
+}
+```
+
+Discuss anonymous functions and the restrictions of scope in these two examples
+
+Go over arrow functions
+
+```
+const printPokemonName = () => {
+console.log('Hi, I\'m Pikachu!')
+}
+```
+
+Anatomy of a function (parameters, body)
+Invoking a function
+Function scope vs global scope
+What is a closure and why is it useful
