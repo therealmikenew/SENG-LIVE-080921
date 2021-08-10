@@ -11,16 +11,12 @@
 ```txt
 05 min - Warm Up
 05 min - Review Warm up
-30 min - Segment 1: functions & scope
-
-05 min - The Console
-05 min - Debugging
-05 min - Warm Up
-20 min - Segment 1: Review Data Types
+30 min - Segment 1: Functions & scope
 10 min - Break
-20 min - Segment 2: Variables and Conditionals
-10 min - Check for Understanding
-10 min - Go over global and block scope
+10 min - First class functions 
+10 min - Closures
+20 min - Callback Functions
+10 min - Knowledge check exercise
 10 min - Questions
 05 min - Exit Ticket
 ---
@@ -46,47 +42,106 @@ Allows us to structure larger programs
 
 Using function keyword/function declaration - point out that this creates a global scope
 
+This is where we can familiarize students with creating a function that runs upon page loading 
+
+Create a function called `init` that will console.log('web page loaded')
+
 ```
-console.log(renderPokemon())
-function renderPokemon(){
-    console.log('Hi, I\'m Pikachu!')
+function init(){
+    console.log("page has loaded, run your program")
 }
+ 
 ```
 
-Have students help you convert the previous function into a function expression
+Change the console.log to a `return` statement and prompt students to think of ways to test this out for expected output. 
+
+``` 
+Store in a variable and console.log variable
+console.log function invokation
+Invoke function in console
+```
+
+Go over function declarations being accessible in global scope
+
+Write a function called `createPokemon` using function expression 
 
 ```
-console.log(renderPokemon())
-const renderPokemon = function(){
-console.log('Hi, I\'m Pikachu!')
+const createPokemon = function(){
+    let pokemon = prompt('Which pokemon are you today?')
+    return pokemon
 }
+
+console.log(createPokemon)
 ```
 
-Discuss anonymous functions and the restrictions of scope in these two examples
+Call the function without invokation to identify what exactly is being returned. Discuss what it means to invoke a function vs returning a function reference
+
+Discuss anonymous functions and the restrictions of scope with these the previous and next examples by placing a console.log before the function declaration and before the function expression
 
 Go over arrow functions
 
 ```
 const renderPokemon = () => {
-console.log('Hi, I\'m Pikachu!')
+console.log('Rendering Pikachu!')
 }
 ```
 
-#### Anatomy of a function (parameters, body)
-
-Go over function anatomy, point out parameters
-and the body
-
-Go over difference between a paramter and argument
-
-#### Reference vs invokation
-What is the difference between defining and invoking a function?
+Ask students how this function can be made shorter
 
 ```
-printPokemonName
-printPokemonName()
+const renderPokemon = () => console.log('Rendering Pikachu!')
 ```
 
+Talk about the side effects of the above code and how it hard coded and we want to write code that is reusable. So we can use parameters to pass in values as arguments that will be used in the functions program.
+This helps our functions be more dynamic and reusable.
 
-Function scope vs global scope
-What is a closure and why is it useful
+Pass a parameter to renderPokemon and use interpolation to dynamically log the different characters.
+
+```
+const renderPokemon = (pokemon) => {
+console.log(`Rendering ${pokemon}`)
+}
+```
+
+Can be re-written:
+
+```
+const renderPokemon = pokemon => console.log(`Rendering ${pokemon}`)
+
+```
+#### First class functions
+
+What does it mean when we talk about first class functions?
+
+It means that functions can be treated like any other object: they can be assigned to a variable, passed as values to other functions, returned as the value from another function
+
+#### What is a closure and why is it useful
+
+A closure can be thought of as the function that is assigned (or returned as a value) and its associated scope.
+
+const createPokemon = function(){
+    let pokemon = prompt('Which pokemon are you today?')
+    return pokemon
+}
+
+#### Callback functions
+
+Functions that are passed in as an argument to another function are called callback functions
+
+```
+const printPokemon = (name) => {
+    console.log(`Today's popular pokemon is: ${name}`)
+}
+
+const capitalizePokemon = (name) => {
+    console.log(`${name.toUpperCase()}`)
+}
+
+const createPokemon = (callback) => {
+    let pokemon = prompt('Which pokemon are you today?')
+    callback(pokemon)
+}
+
+createPokemon(capitalizePokemon)
+createPokemon(printPokemon)
+```
