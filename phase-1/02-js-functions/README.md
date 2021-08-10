@@ -119,12 +119,14 @@ It means that functions can be treated like any other object: they can be assign
 
 A closure can be thought of as the function that is assigned (or returned as a value) and its associated scope.
 
+```
 const createPokemon = function(){
     let pokemon = prompt('Which pokemon are you today?')
     return function printPokemon(){
         console.log(`Today's popular pokemon is: ${pokemon}`)
     }
 }
+```
 
 #### Callback functions
 
