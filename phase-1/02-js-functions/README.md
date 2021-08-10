@@ -16,8 +16,8 @@
 10 min - First class functions 
 10 min - Closures
 20 min - Callback Functions
-10 min - Knowledge check exercise
-10 min - Questions
+15 min - Knowledge check exercise
+05 min - Questions
 05 min - Exit Ticket
 ---
 120 min
@@ -121,7 +121,9 @@ A closure can be thought of as the function that is assigned (or returned as a v
 
 const createPokemon = function(){
     let pokemon = prompt('Which pokemon are you today?')
-    return pokemon
+    return function printPokemon(){
+        console.log(`Today's popular pokemon is: ${pokemon}`)
+    }
 }
 
 #### Callback functions
