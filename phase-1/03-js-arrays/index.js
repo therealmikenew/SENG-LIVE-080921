@@ -18,8 +18,13 @@ const pokemons = [
   "Pidgeotto",
   "Pidgeot",
   "Rattata",
-  "Raticate"
+  "Raticate",
 ];
 
-let finding = pokemons.find((pokemon) => pokemon.length < 7)
-console.log(finding)
+function usingFilter(arr) {
+  return arr.filter((element) => element.startsWith("B"));
+}
+
+const filteredItems = usingFilter(pokemons)
+console.log(filteredItems)
+console.log(pokemons)
