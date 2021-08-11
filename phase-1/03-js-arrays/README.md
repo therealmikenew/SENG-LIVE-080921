@@ -7,4 +7,4 @@
 
 ### Warm up 
 
-Create an array called morningRoutine that is set to a list of the steps you take daily to get ready for the day.
+In your own words, what is an array and why is it useful in programming?
