@@ -217,9 +217,9 @@ for (const pokemon of pokemons) {
 pokemons.forEach(pokemon => alert(pokemon))
 ```
 
-point out that forEach will take in a callback function. 
+point out that forEach will take in a callback function.
 
-if we have a collection of pokemons and want to log each pokemon, how can we use the forEach method to run logPokemon for each element? 
+if we have a collection of pokemons and want to log each pokemon, how can we use the forEach method to run logPokemon for each element?
 
 ```
 pokemons.forEach((pokemon) => logPokemon(pokemon))
