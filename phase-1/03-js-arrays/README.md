@@ -60,11 +60,17 @@ const pokemons = ['pikachu', 'bulbosaur', 'jigglypuff']
 - Index numbers begin at 0 and increment per element in array 
 - We can use this index to retreive values from an array 
 
-``` pokemons[2]``` will return the third element in the array 
+``` 
+pokemons[2]
+``` 
+
+will return the third element in the array 
 
 - We can use an index number to also update the element. 
 
-``` pokemons[2] = 'Jigglypuff' ```
+``` 
+pokemons[2] = 'Jigglypuff' 
+```
 
 Ask students what the best way to access the following arrays last element would be. Drive the fact that it is a long array, we could not know the exact size and index of the element:
 
@@ -93,7 +99,9 @@ const pokemons = [
 ];
 ```
 
-`pokemons[pokemons.length -1]`
+```
+pokemons[pokemons.length -1]
+```
 
 #### .push, .pop, .shift, .unshift
 
