@@ -160,6 +160,20 @@ console.log(Object.values(pikachu))
 A good reason to use Object.values would be to create something like html nodes in a clean and consice way 
 
 ```
+delete pikachu.abilities
+
+const listItems = Object.values(pikachu).map(value => {
+        return `<li>${value}</li>`
+})
+
+console.log(listItems)
+```
+
+
+
+#### BONUS if there is time
+
+```
 const listItems = Object.values(pikachu).map(value => {
     if (!Array.isArray(value)){
         return `<li>${value}</li>`
