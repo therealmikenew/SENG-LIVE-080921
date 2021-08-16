@@ -30,3 +30,23 @@ const pokemons = [
     likes: 11,
   },
 ];
+
+const pokeForm = document.getElementById('poke-form');
+
+const labels = document.getElementsByClassName('form-label');
+
+const divGoals = document.querySelector('#lecture-goals')
+
+const li = document.querySelectorAll('li');
+
+
+//iterating through each element
+pokemons.forEach((pokemon)=> renderPokemon(pokemon))
+// below same as above
+pokemons.forEach(renderPokemon)
+
+
+function renderPokemon(pokemon){
+
+
+}
