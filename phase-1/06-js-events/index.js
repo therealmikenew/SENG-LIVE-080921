@@ -56,17 +56,58 @@ function renderPokemon(pokemon) {
   const likeBttn = document.createElement("button");
   likeBttn.className = "like-bttn";
   likeBttn.textContent = "♥";
+  likeBttn.addEventListener('click', () => increaseLike(pokemon, likesNum))
   
   const deleteBttn = document.createElement("button");
   deleteBttn.className = "delete-bttn";
   deleteBttn.textContent = "Delete";
+  deleteBttn.addEventListener('click', () => deletePoke(pokeCard))
 
   pokeCard.append(pokeImg, pokeName, pokeLikes, likesNum, likeBttn, deleteBttn);
   pokeContainer.appendChild(pokeCard);
 }
 
+function deletePoke(pokeCard){
+  pokeCard.remove()
+}
+
+function deletePoke(event){
+  event.target.parentNode.remove()
+}
+
+function increaseLike(pokemon, likesElement){
+    // 1. increase the num of likes by 1 per click
+      ++pokemon.likes
+      // pokemon.likes += 1
+    // 2. update the DOM to reflect that new number
+      likesElement.textContent = pokemon.likes
+}
+
+function createPokemon(event){
+    // prevent default behavior of a form
+    event.preventDefault()
+  
+    // gather input values
+    let pokeName = pokeForm.querySelector('#name-input').value
+    let pokeImg = pokeForm.querySelector('#img-input').value
+  
+    // create new pokemon object
+     let pokemon = {
+      id: 7,
+      name: pokeName,
+      img: pokeImg,
+      likes: 0,
+     }
+  
+    // create a new card for new pokemon
+    renderPokemon(pokemon)
+    pokeForm.reset()
+}
+
 function init() {
   pokemons.forEach(renderPokemon);
+  pokeForm.addEventListener('submit', createPokemon)
 }
 
 init()
+
