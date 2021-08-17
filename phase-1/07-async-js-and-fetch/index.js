@@ -35,6 +35,7 @@ const pokemons = [
 
 const pokeContainer = document.getElementById("poke-container");
 const pokeForm = document.getElementById("poke-form");
+let pokemonArr;
 
 function renderPokemon(pokemon) {
   const pokeCard = document.createElement("div");
@@ -93,8 +94,10 @@ function deletePoke(pokeCard) {
 }
 
 function init() {
-  pokemons.forEach(renderPokemon);
+  pokemons.forEach(renderPokemon)
   pokeForm.addEventListener("submit", createPokemon);
 }
 
 init();
+
+
