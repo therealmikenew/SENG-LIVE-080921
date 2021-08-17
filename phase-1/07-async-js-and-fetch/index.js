@@ -94,10 +94,10 @@ function deletePoke(pokeCard) {
 }
 
 function init() {
-  pokemons.forEach(renderPokemon)
+  pokemons.forEach(renderPokemon);
   pokeForm.addEventListener("submit", createPokemon);
 }
 
 init();
 
-
+test;
