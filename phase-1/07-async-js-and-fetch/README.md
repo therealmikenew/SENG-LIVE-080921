@@ -9,3 +9,8 @@
 
 To start the server run `json-server --watch db.json`
 This will produce the following endpoint: `http://localhost:3000/pokemons`
+
+
+### Warm up
+
+In your own words, describe Asynchronous functions
