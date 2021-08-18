@@ -1,10 +1,11 @@
 const pokeContainer = document.getElementById("poke-container");
 const pokeForm = document.getElementById("poke-form");
 
-// const pokeCard = document.getElementById('poke-1')
-// console.log(pokeCard) // returns 'null'
+// inspect html to make sure poke-1 is correct id 
+// look at the elements tab
+// check in console
 
-function renderPokemon(pokemon) {
+function renderPokemon(pokemon){
   const pokeCard = document.createElement("div");
   pokeCard.id = `poke-${pokemon.id}`;
   pokeCard.className = "poke-card";
@@ -40,6 +41,10 @@ function renderPokemon(pokemon) {
 
 function createPokemon(event) {
   event.preventDefault();
+
+  // const pokeCard = document.getElementById('poke-1')
+  // console.log(pokeCard)
+
   let pokeName = pokeForm.querySelector("#name-input").value;
   let pokeImg = pokeForm.querySelector("#img-input").value;
 
@@ -70,8 +75,25 @@ function init() {
 
 init();
 
+
 function getPokemon() {
   fetch("http://localhost:3000/pokemon")
-    .then((resp) => resp.json)
-    .then((pokemons) => pokemons.forEach(renderPokemon));
+    .then((resp) => resp.json())
+    .then((pokemons) => {
+      pokemons.characters.forEach(renderPokemon)
+    });
 }
+
+// fetch("http://localhost:3000/pokemon")
+// .then((resp) => resp.json())
+// .then((pokemons) => {
+//   pokemons.characters.forEach(renderPokemon)
+// });
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   fetch("http://localhost:3000/pokemon")
+//   .then((resp) => resp.json())
+//   .then((pokemons) => {
+//     pokemons.characters.forEach(renderPokemon)
+//   });
+// })
