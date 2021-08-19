@@ -12,3 +12,7 @@ To start the server run `json-server --watch db.json`
 This will produce the following endpoint: `http://localhost:3000/pokemons`
 
 
+### Deliverables:
+
+1. Make a POST request with values submitted through the form.
+2. Render new content on the DOM
