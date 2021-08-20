@@ -16,7 +16,7 @@ This will produce the following endpoint: `http://localhost:3000/pokemons`
 1. Make a POST request with values submitted through the form.
 2. Render new content on the DOM
 
-### Exercise:
+### Exercise Deliverables:
 
 - For this exercise, we will create an interface that allows users to comment on the collection of cards. 
 - We have an endpoint `http://localhost:3000/comments` that will host the collection of comments submitted by a user. We will use this endpoint for any requests made in respect to comments.
