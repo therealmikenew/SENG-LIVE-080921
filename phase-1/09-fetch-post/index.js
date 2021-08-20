@@ -1,12 +1,6 @@
 const pokeContainer = document.getElementById("poke-container");
 const pokeForm = document.getElementById("poke-form");
 
-function getPokemon() {
-  fetch("http://localhost:3000/pokemons")
-    .then((resp) => resp.json())
-    .then((pokemons) => pokemons.forEach(renderPokemon));
-}
-
 function renderPokemon(pokemon) {
   const pokeCard = document.createElement("div");
   pokeCard.id = `poke-${pokemon.id}`;
@@ -64,7 +58,6 @@ function deletePoke(pokeCard) {
 }
 
 function init() {
-  getPokemon();
   pokeForm.addEventListener("submit", createPokemon);
 }
 
