@@ -1,32 +1,16 @@
-// Select the form and add an event listener for a 'submit' event
-// Each item submitted will have a name, quantity and check mark box that will be updated when selected by a user
-// Each individual item can be listed in an `li` tag
 const BASE_URL = "http://localhost:3000/items";
-const itemsContainer = document.querySelector("#items-container");
-const itemsForm = document.querySelector("#items-form");
-itemsForm.addEventListener("submit", createItem);
+// Select and save the items container element
+// Select and save the items form element
 
-function createItem(e) {
-  e.preventDefault();
-  const name = e.target.querySelector("#items-input").value;
-  const quantity = e.target.querySelector("#quantity-input").value;
+// Test your code. What is the return value and why?
 
-  const newItem = {
-    name: name,
-    quantity: quantity,
-    completed: false,
-  };
+// Add an event listener to form calling the event handler, createItem 
 
-  renderItem(newItem);
-
-  fetch(BASE_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newItem),
-  });
+function createItem() {
+  // This event handler should create a new Items object and persist data
 }
+
+// Review this code, can you identify anything that is missing? Test your theories!
 
 function renderItem(item) {
   const checkBox = document.createElement("input");
@@ -34,35 +18,33 @@ function renderItem(item) {
   if (item.completed) {
     checkBox.checked = true;
   }
-  checkBox.addEventListener("click", () => updateCompleted(item));
 
+  // Fix this code to pass the item object to the event handler
+  checkBox.addEventListener("click", updateCompleted);
+
+  // Remember that element id's should be unique
   const listItem = document.createElement("li");
-  listItem.id = `item-${item.id}`;
+  listItem.id = `items`;
   listItem.textContent = `Name: ${item.name} - Quantity: ${item.quantity} - Bought: `;
 
   const deleteBttn = document.createElement("button");
   deleteBttn.textContent = "X";
 
   listItem.append(checkBox, deleteBttn);
-  itemsContainer.appendChild(listItem);
+
+  // Test this method by calling in getItems method to render items to DOM
 }
 
 function updateCompleted(item) {
+
+  // This logic will use the ! operator to toggle the status of the property, completed. If it returns false, it will update to true and vice versa.
   let completed = (item.completed = !item.completed);
 
-  fetch(BASE_URL + `/${item.id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ completed: completed }),
-  });
+  // Make a fetch request to update data on server upon checkbox click
+ 
 }
 
 function getItems() {
-  fetch(BASE_URL)
-    .then((resp) => resp.json())
-    .then((items) => items.forEach(renderItem));
+  // Need to make a fetch request for all items from server
 }
 
-getItems();
